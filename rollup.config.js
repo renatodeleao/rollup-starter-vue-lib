@@ -8,7 +8,6 @@ import pkg from './package.json';
 
 const babelOptions = {
 	extensions: ['.js', '.jsx', '.es6', '.es', '.mjs', '.vue', '.ts'],
-	exclude: ['node_modules/**'],
 }
 
 export default [
