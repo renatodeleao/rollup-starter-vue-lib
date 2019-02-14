@@ -1,8 +1,11 @@
 {
-  "name": "vue-component",
+  "name": "rollup-starter-vue-lib",
   "version": "0.1.0",
   "description": "A pseudo fork from rollup-starter-lib made for vue",
-  "repository": "git@github.com:renatodeleao/rollup-starter-vue-lib.git",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:renatodeleao/rollup-starter-vue-lib.git"
+  },
   "author": "Renato de Leão <renatodeleao@gmail.com>",
   "license": "MIT",
   "main": "src/index.js",
@@ -35,7 +38,8 @@
     "pretest": "npm run build",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "docs:deploy": "./deploy.sh"
+    "docs:deploy": "chmod +x ./docs-deploy.sh && ./docs-deploy.sh $npm_package_repository_url"
+
   },
   "files": [
     "dist/*.js",
