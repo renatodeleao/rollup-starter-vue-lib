@@ -33,7 +33,7 @@ const terserConfig = {
   }
 };
 
-const umdPlugins = [resolve(), commonjs()];
+const umdPlugins = [resolve()];
 
 const commonPlugins = [
   sass(rollupSassOptions),
@@ -73,21 +73,6 @@ export default [
       ...commonPlugins,
       babel(rollupBabelConfig),
       terser(terserConfig)
-    ]
-  },
-  // module
-  {
-    input: "src/index.js",
-    output: [
-      {
-        exports: 'named',
-        banner, file: pkg.browser, format: 'cjs',  sourcemap: true
-      }
-    ],
-    external: Object.keys(pkg.dependencies || {}),
-    plugins: [
-      ...commonPlugins,
-      babel(rollupBabelConfig)
     ]
   },
   {
