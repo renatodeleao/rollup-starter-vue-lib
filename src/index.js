@@ -1,21 +1,21 @@
 import VueComponent from "./VueComponent.vue";
 
-var COMPONENT_NAME = "component-name"
+var COMPONENT_NAME = "component-name";
 var Plugin = {
-  install (Vue, options = {}) {
+  install(Vue, options = {}) {
     /**
      * Makes sure that plugin can be installed only once
      */
     if (this.installed) {
-      return
-		}
+      return;
+    }
 
-		this.installed = true;
-		this.componentName = options.componentName || COMPONENT_NAME;
+    this.installed = true;
+    this.componentName = options.componentName || COMPONENT_NAME;
 
+    Vue.component(this.componentName, VueComponent);
+  }
+};
 
-		Vue.component(this.componentName, VueComponent);
-	}
-}
-
+export { VueComponent };
 export default Plugin;

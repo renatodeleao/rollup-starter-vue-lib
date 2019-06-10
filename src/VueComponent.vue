@@ -8,26 +8,25 @@ const testVar = "test";
 export default {
   name: "vue-component",
   methods: {
-    test(){
-      const a = {a: "a" };
-      const b = {b: "b"}
-      const c = {...a, ...b, c: testVar};
+    test() {
+      const a = { a: "a" };
+      const b = { b: "b" };
+      const c = { ...a, ...b, c: testVar };
 
-      const add = (a,b) => {
+      const add = (a, b) => {
         return a + b;
-      }
+      };
 
-      setTimeout(()=> {
+      setTimeout(() => {
         console.log(c);
-        add(2,3);
-      })
-
+        add(2, 3);
+      });
     }
   }
-}
+};
 </script>
 
-<style lang="postcss">
+<style>
 div {
   color: lime;
   appearance: none;
