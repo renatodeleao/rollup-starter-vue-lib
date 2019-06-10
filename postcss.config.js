@@ -1,13 +1,6 @@
-const pkg = require('./package.json');
+const { banner } = require("./utils")
 
-const banner = `
-@preserve
-@name ${pkg.name}
-@version ${pkg.version}
-@license: ${pkg.license}
-© ${pkg.author}`;
-
-module.exports = (context => {
+const postcssConfig = (context => {
   const plugins =  [
     require('autoprefixer'),
     require('cssnano')({ preset: 'default'}),
@@ -18,3 +11,5 @@ module.exports = (context => {
     plugins
   }
 })();
+
+module.exports = postcssConfig

@@ -8,9 +8,11 @@
   },
   "author": "Renato de Leão <renatodeleao@gmail.com>",
   "license": "MIT",
-  "main": "src/index.js",
+  "main": "dist/vue-component.umd.js",
   "module": "dist/vue-component.esm.js",
-  "browser": "dist/vue-component.umd.js",
+  "browser": "dist/vue-component.cjs.js",
+  "jsdelivr": "dist/vue-component.umd.min.js",
+  "unpkg": "dist/vue-component.umd.min.js",
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-object-rest-spread": "^7.3.1",
@@ -39,7 +41,6 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "docs:deploy": "chmod +x ./docs-deploy.sh && ./docs-deploy.sh $npm_package_repository_url"
-
   },
   "files": [
     "dist/*.js",
